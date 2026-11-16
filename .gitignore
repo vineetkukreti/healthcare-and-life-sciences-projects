@@ -1,0 +1,25 @@
+.env*
+!.env.example
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+dist/
+build/
+.vite/
+*.tsbuildinfo
+coverage/
+*.log
+test-results/
+playwright-report/
+*.db
+*.sqlite
+*.sqlite3
+.DS_Store
+Thumbs.db
+# nested repo metadata / local agent tooling
+.git.bak/
+.agents/
+.specify/

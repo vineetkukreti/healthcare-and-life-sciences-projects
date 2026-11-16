@@ -1,0 +1,76 @@
+openapi: 3.1.0
+info:
+  title: Fitterfly Chronic Care MVP API
+  version: 0.1.0
+paths:
+  /health:
+    get:
+      summary: Check API health
+      responses:
+        "200":
+          description: API is available
+  /users:
+    post:
+      summary: Create a demo chronic care user
+      responses:
+        "201":
+          description: User created
+  /meal-logs/analyze:
+    post:
+      summary: Analyze a meal photo and return editable nutrition estimates
+      responses:
+        "200":
+          description: Meal estimate returned for user confirmation
+  /meal-logs:
+    post:
+      summary: Save a user-confirmed meal log
+      responses:
+        "201":
+          description: Meal log saved
+    get:
+      summary: List meal logs for a user
+      responses:
+        "200":
+          description: Meal logs returned
+  /coaching/recommendations:
+    post:
+      summary: Generate personalized coaching guidance
+      responses:
+        "200":
+          description: Recommendation returned or escalated for review
+  /support/interactions:
+    post:
+      summary: Answer or escalate a support question
+      responses:
+        "200":
+          description: Support result returned
+  /outcomes/users/{user_id}:
+    get:
+      summary: Return personal outcome trends
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: User outcome trends returned
+  /enterprise/cohorts/{cohort_id}/outcomes:
+    get:
+      summary: Return aggregate cohort outcomes
+      parameters:
+        - name: cohort_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Aggregate cohort outcomes returned
+  /review-cases:
+    get:
+      summary: List human review cases
+      responses:
+        "200":
+          description: Review cases returned
